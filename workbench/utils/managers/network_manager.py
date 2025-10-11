@@ -6,7 +6,7 @@ from workbench.tools.network_tools import NetworkTools
 from workbench.utils.core.base.tool_manager import BaseToolManager
 
 
-class ResearchManager(BaseToolManager):
+class NetworkManager(BaseToolManager):
     def __init__(self) -> None:
         super().__init__()
 

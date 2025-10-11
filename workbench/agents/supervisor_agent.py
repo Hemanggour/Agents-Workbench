@@ -2,8 +2,10 @@ from typing import Any
 
 from langgraph_supervisor import create_supervisor
 
+from workbench.agents import network_agent
 from workbench.agents.research_agent import ResearchAgent
 from workbench.agents.system_agent import SystemAgent
+from workbench.agents.network_agent import NetworkAgent
 from workbench.utils.core.base.agent import BaseAgent
 from workbench.utils.prompts import SUPERVISOR_AGENT_PROMPT
 
@@ -14,10 +16,12 @@ class SupervisorAgent(BaseAgent):
 
         research_agent = ResearchAgent()
         system_agent = SystemAgent()
+        network_agent = NetworkAgent()
 
         agents_list = [
             research_agent,
             system_agent,
+            network_agent,
         ]
 
         self.agent = create_supervisor(

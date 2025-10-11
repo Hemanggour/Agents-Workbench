@@ -6,7 +6,7 @@ from workbench.tools.archive_tools import ArchiveTools
 from workbench.utils.core.base.tool_manager import BaseToolManager
 
 
-class ResearchManager(BaseToolManager):
+class ArchiveManager(BaseToolManager):
     def __init__(self) -> None:
         super().__init__()
 

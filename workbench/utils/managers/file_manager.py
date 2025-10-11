@@ -6,7 +6,7 @@ from workbench.tools.file_tools import FileTools
 from workbench.utils.core.base.tool_manager import BaseToolManager
 
 
-class ResearchManager(BaseToolManager):
+class FileManager(BaseToolManager):
     def __init__(self) -> None:
         super().__init__()
 

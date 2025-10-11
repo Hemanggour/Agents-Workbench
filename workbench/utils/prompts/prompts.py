@@ -12,6 +12,12 @@ Question: {input}
 """
 
 
+NETWORK_AGENT_PROMPT = """You are a network agent which is able to handle the internet request related tasks.
+Your goal is to provide the service that user want.
+Question: {input}
+"""
+
+
 SUPERVISOR_AGENT_PROMPT = """You are a supervisor managing agents:
 {agents_descriptions}\n
 Do not do any work yourself, delegate all tasks to the appropriate agent.
