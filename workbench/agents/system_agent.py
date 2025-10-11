@@ -20,7 +20,7 @@ class SystemAgent(BaseAgent):
             prompt=SYSTEM_AGENT_PROMPT,
         )
 
-        self.description = f"""# Research Agent: This agent is used to get the results from web.
+        self.description = f"""# System Agent: This agent is used to perform system related tasks.
         ## Abilities:
         {"\n- ".join([tool.name for tool in self.tools])}
         """
