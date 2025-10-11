@@ -1,0 +1,14 @@
+langchain
+langchain-core
+langchain-community
+langchain-google-genai
+langgraph
+langgraph-supervisor
+python-dotenv
+pydantic
+ddgs
+requests
+beautifulsoup4
+pandas
+psutil
+apscheduler
