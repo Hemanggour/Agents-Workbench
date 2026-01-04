@@ -1,8 +1,8 @@
+from workbench.agents.file_agent import FileAgent
 from workbench.agents.network_agent import NetworkAgent
 from workbench.agents.research_agent import ResearchAgent
 from workbench.agents.supervisor_agent import SupervisorAgent
 from workbench.agents.system_agent import SystemAgent
-from workbench.agents.file_agent import FileAgent
 
 
 def main():

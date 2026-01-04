@@ -20,10 +20,19 @@ class SystemAgent(BaseAgent):
             prompt=SYSTEM_AGENT_PROMPT,
         )
 
-        self.description = f"""# System Agent: This agent is used to perform system related tasks.
-        ## Abilities:
-        {"\n- ".join([tool.name for tool in self.tools])}
-        """
+        self.description = f"""
+# Agent Name: System Agent
+
+## Role
+Handles all system related tasks.
+
+## Allowed Capabilities
+This agent can ONLY perform actions using the following tools:
+- {"\n- ".join([tool.name for tool in self.tools])}
+
+## Restrictions
+- This agent must not perform tasks outside the listed tools.
+"""  # noqa
 
     def run(self, query: str) -> Any:
         messages = [{"role": "user", "content": query}]

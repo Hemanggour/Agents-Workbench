@@ -20,10 +20,19 @@ class FileAgent(BaseAgent):
             prompt=FILE_AGENT_PROMPT,
         )
 
-        self.description = f"""# File Agent: This agent is used to perform file related tasks.
-        ## Abilities:
-        {"\n- ".join([tool.name for tool in self.tools])}
-        """  # noqa
+        self.description = f"""
+# Agent Name: File Agent
+
+## Role
+Handles all file related tasks.
+
+## Allowed Capabilities
+This agent can ONLY perform actions using the following tools:
+- {"\n- ".join([tool.name for tool in self.tools])}
+
+## Restrictions
+- This agent must not perform tasks outside the listed tools.
+"""  # noqa
 
     def run(self, query: str) -> Any:
         messages = [{"role": "user", "content": query}]

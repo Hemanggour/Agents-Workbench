@@ -4,7 +4,7 @@ from langgraph.prebuilt import create_react_agent
 
 from workbench.utils.core.base.agent import BaseAgent
 from workbench.utils.managers.web_manager import WebManager
-from workbench.utils.prompts import RESEARCH_PROMPT
+from workbench.utils.prompts import RESEARCH_AGENT_PROMPT
 
 
 class ResearchAgent(BaseAgent):
@@ -17,13 +17,22 @@ class ResearchAgent(BaseAgent):
             name="research_agent",
             model=self.llm,
             tools=self.tools,
-            prompt=RESEARCH_PROMPT,
+            prompt=RESEARCH_AGENT_PROMPT,
         )
 
-        self.description = f"""# Research Agent: This agent is used to get the results from web.
-        ## Abilities:
-        {"\n- ".join([tool.name for tool in self.tools])}
-        """
+        self.description = f"""
+# Agent Name: Research Agent
+
+## Role
+Handles all research related tasks.
+
+## Allowed Capabilities
+This agent can ONLY perform actions using the following tools:
+- {"\n- ".join([tool.name for tool in self.tools])}
+
+## Restrictions
+- This agent must not perform tasks outside the listed tools.
+"""  # noqa
 
     def run(self, query: str) -> Any:
         messages = [{"role": "user", "content": query}]
