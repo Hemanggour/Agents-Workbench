@@ -1,4 +1,5 @@
 from workbench.utils.prompts.prompts import (
+    FILE_AGENT_PROMPT,
     NETWORK_AGENT_PROMPT,
     RESEARCH_PROMPT,
     SUPERVISOR_AGENT_PROMPT,
@@ -10,4 +11,5 @@ __all__ = [
     "SYSTEM_AGENT_PROMPT",
     "NETWORK_AGENT_PROMPT",
     "SUPERVISOR_AGENT_PROMPT",
+    "FILE_AGENT_PROMPT",
 ]
