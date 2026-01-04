@@ -18,6 +18,13 @@ Question: {input}
 """  # noqa
 
 
+FILE_AGENT_PROMPT = """You are a file agent which is able to handle the file request related tasks.
+Your goal is to provide the service that user want.
+You have to use the given tools to perform file tasks.
+Question: {input}
+"""  # noqa
+
+
 SUPERVISOR_AGENT_PROMPT = """# You are a supervisor managing agents:
 - You have to use the agents according to their abilities provided each agent comes with some tools according to their ability.
 - Do not do any work yourself, delegate all tasks to the appropriate agent.

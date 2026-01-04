@@ -243,7 +243,7 @@ class FileTools:
                 }""",
         )
 
-    def _normalize_path(file_path: str) -> str:
+    def _normalize_path(self, file_path: str) -> str:
         """Normalize file path and ensure it's within workspace"""
         # Get the workspace root directory
         workspace_root = os.path.abspath(
@@ -329,7 +329,9 @@ class FileTools:
                 return "Error: No file path provided"
 
             try:
+                print(file_path)
                 file_path = self._normalize_path(file_path.strip())
+                print(file_path)
 
             except ValueError as e:
                 return str(e)
