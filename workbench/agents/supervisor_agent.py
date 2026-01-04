@@ -2,33 +2,26 @@ from typing import Any
 
 from langgraph_supervisor import create_supervisor
 
-from workbench.agents import network_agent
-from workbench.agents.research_agent import ResearchAgent
-from workbench.agents.system_agent import SystemAgent
-from workbench.agents.network_agent import NetworkAgent
 from workbench.utils.core.base.agent import BaseAgent
 from workbench.utils.prompts import SUPERVISOR_AGENT_PROMPT
 
 
 class SupervisorAgent(BaseAgent):
-    def __init__(self, model: str = None, model_provider: str = None) -> None:
+    def __init__(
+        self,
+        model: str = None,
+        model_provider: str = None,
+        sub_agents_list: list[BaseAgent] = [],
+    ) -> None:
         super().__init__(model, model_provider)
 
-        research_agent = ResearchAgent()
-        system_agent = SystemAgent()
-        network_agent = NetworkAgent()
-
-        agents_list = [
-            research_agent,
-            system_agent,
-            network_agent,
-        ]
+        self.agents_list = sub_agents_list
 
         self.agent = create_supervisor(
             name="supervisor",
             model=self.llm,
-            agents=[agent.agent for agent in agents_list],
-            prompt=self.__prompt_builder(agents_list),
+            agents=[agent.agent for agent in self.agents_list],
+            prompt=self.__prompt_builder(self.agents_list),
         ).compile()
 
     def __prompt_builder(self, agents: list[BaseAgent]) -> str:

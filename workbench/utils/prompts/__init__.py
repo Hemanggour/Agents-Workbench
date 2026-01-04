@@ -1,4 +1,9 @@
-from .prompts import RESEARCH_PROMPT, SUPERVISOR_AGENT_PROMPT, NETWORK_AGENT_PROMPT, SYSTEM_AGENT_PROMPT
+from workbench.utils.prompts.prompts import (
+    NETWORK_AGENT_PROMPT,
+    RESEARCH_PROMPT,
+    SUPERVISOR_AGENT_PROMPT,
+    SYSTEM_AGENT_PROMPT,
+)
 
 __all__ = [
     "RESEARCH_PROMPT",

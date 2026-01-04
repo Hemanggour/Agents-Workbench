@@ -5,8 +5,7 @@ from langchain.chat_models import init_chat_model
 from langchain_core.tools import BaseTool
 
 from workbench.utils.config.settings import settings
-
-from .tool_manager import BaseToolManager
+from workbench.utils.core.base.tool_manager import BaseToolManager
 
 
 class BaseAgent:

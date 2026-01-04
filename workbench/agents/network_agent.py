@@ -23,7 +23,7 @@ class NetworkAgent(BaseAgent):
         self.description = f"""# Network Agent: This agent is used to perform internet related tasks.
         ## Abilities:
         {"\n- ".join([tool.name for tool in self.tools])}
-        """
+        """  # noqa
 
     def run(self, query: str) -> Any:
         messages = [{"role": "user", "content": query}]
